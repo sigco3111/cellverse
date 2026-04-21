@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧬 CellVerse — Cellular Automata Laboratory
 
-## Getting Started
+Interactive cellular automata simulator built with Next.js and HTML5 Canvas. Explore emergent complexity from simple rules.
 
-First, run the development server:
+## ✨ Features
+
+- **8 Preset Rules** — Conway's Game of Life, HighLife, Day & Night, Seeds, Diamoeba, Wireworld, Brian's Brain, Langton's Ant
+- **Custom Rule Builder** — Create your own B/S notation rules with interactive editor
+- **6 Classic Patterns** — Glider, LWSS, Pulsar, Gosper Glider Gun, R-pentomino, Acorn
+- **Interactive Canvas** — Draw, erase, and place patterns with mouse
+- **Real-time Controls** — Play/pause, step-by-step, speed control
+- **Grid Customization** — Adjustable grid size and cell rendering
+- **Dark Theme** — Sleek dark UI with ambient glow effects
+
+## 🎮 How to Play
+
+1. **Select a rule** from the sidebar (start with Conway's Game of Life)
+2. **Draw cells** by clicking/dragging on the canvas, or click **🎲 Random** to populate
+3. **Press ▶ Play** (or Space) to start the simulation
+4. **Try different rules** to see wildly different emergent behaviors
+5. **Use the Custom Rule Builder** (⚙️ button) to create your own B/S rules
+
+## 🛠 Tech Stack
+
+- **Next.js 16** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **HTML5 Canvas**
+
+## 🚀 Getting Started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📦 Rules Included
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Rule | Notation | Description |
+|------|----------|-------------|
+| Conway's Game of Life | B3/S23 | The classic — complex patterns from simple rules |
+| HighLife | B36/S23 | Like Life but creates self-replicating patterns |
+| Day & Night | B3678/S34678 | Symmetric rule — dead and alive behave similarly |
+| Seeds | B2/S | Explosive chaos — cells never survive |
+| Diamoeba | B35678/S5678 | Diamond-shaped amoeba-like growth |
+| Wireworld | Multi-state | Electronic circuit simulation |
+| Brian's Brain | Multi-state | Creates beautiful moving patterns |
+| Langton's Ant | Special | Emergent "highway" after ~10,000 steps |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📜 License
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
