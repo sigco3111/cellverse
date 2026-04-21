@@ -1,52 +1,174 @@
-# 🧬 CellVerse — Cellular Automata Laboratory
+# 🧬 CellVerse — 세포 자동기 실험실
 
-Interactive cellular automata simulator built with Next.js and HTML5 Canvas. Explore emergent complexity from simple rules.
+> 단순한 규칙에서 복잡한 생명이 탄생한다.
 
-## ✨ Features
+Next.js와 HTML5 Canvas로 만든 인터랙티브 세포 자동기(Cellular Automata) 시뮬레이터입니다. 작은 규칙 하나가 어떻게 예측 불가능한 복잡한 패턴을 만들어내는지 직접 눈으로 확인해보세요.
 
-- **8 Preset Rules** — Conway's Game of Life, HighLife, Day & Night, Seeds, Diamoeba, Wireworld, Brian's Brain, Langton's Ant
-- **Custom Rule Builder** — Create your own B/S notation rules with interactive editor
-- **6 Classic Patterns** — Glider, LWSS, Pulsar, Gosper Glider Gun, R-pentomino, Acorn
-- **Interactive Canvas** — Draw, erase, and place patterns with mouse
-- **Real-time Controls** — Play/pause, step-by-step, speed control
-- **Grid Customization** — Adjustable grid size and cell rendering
-- **Dark Theme** — Sleek dark UI with ambient glow effects
+## 🌟 소개
 
-## 🎮 How to Play
+세포 자동기(Cellular Automata)는 수학자 존 콘웨이(John Conway)가 1970년에 고안한 **"인생 게임(Game of Life)"**에서 시작된 분야입니다. 각 셀이 주변 이웃의 상태에 따라 다음 상태를 결정하는 아주 단순한 규칙이지만, 그 결과는 놀라울 정도로 복잡하고 아름답습니다.
 
-1. **Select a rule** from the sidebar (start with Conway's Game of Life)
-2. **Draw cells** by clicking/dragging on the canvas, or click **🎲 Random** to populate
-3. **Press ▶ Play** (or Space) to start the simulation
-4. **Try different rules** to see wildly different emergent behaviors
-5. **Use the Custom Rule Builder** (⚙️ button) to create your own B/S rules
+**CellVerse**는 이러한 세포 자동기의 다양한 규칙을 브라우저에서 직접 체험할 수 있는 실험실입니다. 8가지 프리셋 규칙과 무한한 커스텀 규칙을 통해 **창발적 복잡성(Emergent Complexity)**의 세계를 탐험하세요.
 
-## 🛠 Tech Stack
+## ✨ 주요 기능
 
-- **Next.js 16** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **HTML5 Canvas**
+### 🔬 8가지 프리셋 규칙
+| 규칙 | 표기법 | 설명 |
+|------|--------|------|
+| **Conway's Game of Life** | B3/S23 | 모든 것의 시작. 이웃 3명이면 탄생, 2-3명이면 생존 |
+| **HighLife** | B36/S23 | Life + 복제자(Replicator) 패턴 등장 |
+| **Day & Night** | B3678/S34678 | 낮과 밤이 대칭되는 독특한 규칙 |
+| **Seeds** | B2/S | 셀이 절대 생존하지 못하는 폭발적 규칙 |
+| **Diamoeba** | B35678/S5678 | 다이아몬드형 아메바처럼 자라나는 구조 |
+| **Wireworld** | 4상태 | 전자 회로를 시뮬레이션 |
+| **Brian's Brain** | 3상태 | 발화→소멸→꺼짐의 우아한 이동 패턴 |
+| **Langton's Ant** | 특수 | 1만 스텝 후 고속도로(Highway)가 등장하는 놀라운 현상 |
 
-## 🚀 Getting Started
+### ⚙️ 커스텀 규칙 빌더
+B/S 표기법을 사용하여 나만의 규칙을 만들 수 있습니다.
+- **탄생(Birth)**: 죽은 셀이 이웃 N명일 때 살아남는 조건
+- **생존(Survive)**: 산 셀이 이웃 N명일 때 계속 사는 조건
+- 8가지 빠른 프리셋으로 시작 가능
+
+### 🎨 인터랙티브 캔버스
+- **그리기 도구**: 클릭 & 드래그로 셀 직접 그리기
+- **지우기 도구**: 불필요한 셀 제거
+- **패턴 배치**: 6가지 클래식 패턴을 원하는 위치에 놓기
+- **그리드 크기 조절**: 원하는 해상도로 설정
+
+### 🎮 실시간 컨트롤
+- 실행 / 일시정지 / 한 단계 진행
+- 10ms ~ 500ms 속도 조절
+- 무작위 채우기 / 초기화
+
+### ⌨️ 키보드 단축키
+| 키 | 동작 |
+|----|------|
+| `Space` | 실행 / 일시정지 |
+| `N` | 한 단계 진행 |
+| `R` | 무작위 채우기 |
+| `C` | 초기화 |
+
+## 🎮 사용법
+
+### 1. 기본 시작하기
+1. 좌측 패널에서 **"Conway's Game of Life"** 규칙이 선택되어 있는지 확인
+2. **🎲 무작위** 버튼을 눌러 그리드에 랜덤 셀 배치
+3. **▶ 실행** 버튼(또는 `Space` 키)으로 시뮬레이션 시작
+4. 세대(Generation)와 생존 셀(Population) 숫자 변화를 관찰
+
+### 2. 패턴으로 실험하기
+1. 좌측 패널에서 **📐 패턴** 도구 선택
+2. 배치할 패턴 선택 (Glider, Gosper Glider Gun 등)
+3. 캔버스 위에서 원하는 위치 클릭 → 패턴 배치
+4. 실행하여 패턴의 진화 관찰
+
+### 3. 다른 규칙 체험하기
+- **Seeds**: 무작위 채우기 후 실행 → 폭발적인 팽창
+- **Brian's Brain**: 무작위 채우기 후 실행 → 우아한 파동 패턴
+- **Langton's Ant**: 빈 그리드에서 실행 → 개미가 고속도로를 만듦
+- **Wireworld**: 셀을 수동으로 그리고, 전자머리(파란색)를 놓아 전파 관찰
+
+### 4. 나만의 규칙 만들기
+1. 우측 상단 **⚙️ 규칙 만들기** 버튼 클릭
+2. 탄생/생존 숫자 토글로 조합 설정
+3. 빠른 프리셋에서 기본값 불러오기 가능
+4. **만들기 & 적용** 버튼으로 즉시 테스트
+
+## 🧠 세포 자동기란?
+
+세포 자동기는 **격자(Grid) 위의 각 셀이 일정한 규칙에 따라 상태를 변화시키는 수학적 모델**입니다.
+
+### 핵심 개념
+
+```
+현재 상태  +  규칙  →  다음 상태
+  ■ ■ □         B3/S23     □ ■ ■
+  □ ■ □     ─────────→    ■ □ ■
+  □ □ □                   ■ ■ □
+```
+
+- **셀(Cell)**: 격자의 각 칸. 살아있거나(■) 죽어있거나(□)
+- **이웃(Neighbor)**: 주변 8개 셀 (무어 이웃, Moore Neighborhood)
+- **생성(Birth)**: 죽은 셀 주변에 정확히 N개의 살은 셀이 있으면 태어남
+- **생존(Survive)**: 산 셀 주변에 정확히 N개의 살은 셀이 있으면 계속 생존
+
+### B/S 표기법
+- **B(Birth)** 뒤의 숫자: 죽은 셀이 살아나기 위한 이웃 수
+- **S(Survive)** 뒤의 숫자: 산 셀이 살아남기 위한 이웃 수
+- 예: `B3/S23` = 이웃 3명이면 탄생, 이웃 2~3명이면 생존
+
+### 왜 흥미로운가?
+
+> *"전혀 예측할 수 없는 복잡성이 가장 단순한 규칙에서 나온다."*
+
+세포 자동기는 다음과 같은 현상을 보여줍니다:
+- **자기 조직화**: 무작위에서 규칙적인 패턴이 자발적으로 형성
+- **창발(Emergence)**: 단순한 규칙에서 예측 불가능한 복잡한 행동 등장
+- **보편적 계산**: Game of Life로 튜링 머신을 구현할 수 있음이 증명됨
+- **자기 복제**: HighLife 규칙에서 패턴이 스스로 복제됨
+
+## 📦 포함된 클래식 패턴
+
+| 패턴 | 설명 |
+|------|------|
+| **Glider** (글라이더) | 가장 단순한 우주선. 대각선으로 이동하며 영원히 날아감 |
+| **LWSS** (경량 우주선) | 가로 방향으로 이동하는 우주선 |
+| **Pulsar** (펄사) | 주기 3으로 팽창/수축을 반복하는 진동자 |
+| **Gosper Glider Gun** (글라이더 총) | 무한히 글라이더를 생성하는 최초의 유한 패턴 |
+| **R-pentomino** (R-펜토미노) | 단 5개 셀로 시작하지만 1103세대까지 진화 |
+| **Acorn** (도토리) | 7개 셀에서 5206세대까지 안정화 |
+
+## 🛠 기술 스택
+
+| 기술 | 용도 |
+|------|------|
+| **Next.js 16** | React 프레임워크 (App Router) |
+| **TypeScript** | 타입 안전성 |
+| **Tailwind CSS** | 스타일링 |
+| **HTML5 Canvas** | 그리드 렌더링 |
+
+### 프로젝트 구조
+
+```
+src/
+├── app/
+│   ├── page.tsx          # 메인 페이지
+│   ├── layout.tsx        # 레이아웃
+│   └── globals.css       # 전역 스타일
+├── components/
+│   ├── GridCanvas.tsx    # 캔버스 렌더링 & 인터랙션
+│   ├── ControlPanel.tsx  # 좌측 컨트롤 패널
+│   └── CustomRuleBuilder.tsx  # 커스텀 규칙 모달
+├── hooks/
+│   └── useSimulation.ts  # 시뮬레이션 상태 관리
+├── lib/
+│   ├── grid.ts           # 그리드 연산 유틸리티
+│   └── rules.ts          # 규칙 정의 & 스텝 함수
+└── types/
+    └── index.ts          # TypeScript 타입 정의
+```
+
+## 🚀 로컬 실행
 
 ```bash
+# 클론
+git clone https://github.com/sigco3111/cellverse.git
+cd cellverse
+
+# 의존성 설치
 npm install
+
+# 개발 서버 실행
 npm run dev
 ```
 
-## 📦 Rules Included
+👉 [http://localhost:3000](http://localhost:3000) 에서 확인
 
-| Rule | Notation | Description |
-|------|----------|-------------|
-| Conway's Game of Life | B3/S23 | The classic — complex patterns from simple rules |
-| HighLife | B36/S23 | Like Life but creates self-replicating patterns |
-| Day & Night | B3678/S34678 | Symmetric rule — dead and alive behave similarly |
-| Seeds | B2/S | Explosive chaos — cells never survive |
-| Diamoeba | B35678/S5678 | Diamond-shaped amoeba-like growth |
-| Wireworld | Multi-state | Electronic circuit simulation |
-| Brian's Brain | Multi-state | Creates beautiful moving patterns |
-| Langton's Ant | Special | Emergent "highway" after ~10,000 steps |
+## 🌐 라이브 데모
 
-## 📜 License
+🔗 **[CellVerse 체험하기](https://cellverse-ruddy.vercel.app)**
 
-MIT
+## 📜 라이선스
+
+MIT License © 2025 sigco3111
