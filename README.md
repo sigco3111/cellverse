@@ -167,7 +167,11 @@ npm run dev
 
 ## 🌐 라이브 데모
 
-🔗 **[CellVerse 체험하기](https://cellverse-ruddy.vercel.app)**
+라이브 데모 : https://sigco3111.github.io/cellverse/
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)](https://sigco3111.github.io/cellverse/)
+
+> 📦 **호스팅 메모**: Next.js 16 정적 export(`output: 'export'`)로 GitHub Pages에 배포됩니다. API routes 없음(클라이언트 측 시뮬레이션만).
 
 ## 📜 라이선스
 
